@@ -1,0 +1,56 @@
+@import 'mixin';
+@import 'var';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// $bg-color:pink; // variable
+// $bg-red:red;
+
+// @mixin global{   // mixin  same type of code can be reuse everywhere
+//     width: 100vw;
+//     height: 100vh;
+//     display: grid;
+//     place-items: center;
+// }
+
+.main_header{
+    // width: 100vw;
+    // height: 100vh;
+    // display: grid;
+    // place-items: center;
+    @include global;
+    //nesting
+    h1{
+        color:$bg-color;
+        font-size: 10rem + 1rem;   //operators
+
+        &:hover{
+            color:$bg-red;
+            cursor: pointer;
+        }
+        // &::after{
+        //     content: 'youtube';
+        // }
+
+    }
+
+    p{
+        color:$bg-red;
+
+        &:hover{
+            color: green;
+            cursor: pointer;
+            font-size: 10rem + 1rem;
+        }
+    }
+}
+
+
+
+html{
+    font-size: 62.5%;
+}
